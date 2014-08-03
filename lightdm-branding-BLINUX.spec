@@ -24,7 +24,7 @@
 # POSSIBILITY OF SUCH DAMAGE.
 
 Name:		lightdm-branding-BLINUX
-Version:        1.0
+Version:        1.1
 Release:        0
 License:        BSD-2-Clause
 Summary:        BLINUX LightDM Branding
