@@ -58,5 +58,8 @@ cp bocal_logo.png %{buildroot}/usr/share/pixmaps/;
 /usr/share/pixmaps/bocal_logo.png
 
 %changelog
+* Mon Aug 04 2014 Emmanuel Vadot <elbarto@bocal.org> - 1.1-0
+- Update config files
+
 * Sun Aug 03 2014 Emmanuel Vadot <elbarto@bocal.org> - 1.0-0
 - Initial package creation
