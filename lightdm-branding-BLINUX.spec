@@ -25,7 +25,7 @@
 
 Name:		lightdm-branding-BLINUX
 Version:        1.1
-Release:        0
+Release:        1
 License:        BSD-2-Clause
 Summary:        BLINUX LightDM Branding
 BuildArch:      noarch
@@ -34,7 +34,7 @@ Vendor:         Bocal
 Url:            http://www.bocal.org
 Group:          User Interface/X
 Packager:       Emmanuel Vadot <elbarto@bocal.org>
-Requires:	lightdm
+Requires:	lightdm-gtk-greeter
 
 %description
 LightDM Background and configuration files for BLINUX
@@ -59,6 +59,9 @@ cp bocal_logo.png %{buildroot}/usr/share/pixmaps/;
 /usr/share/pixmaps/bocal_logo.png
 
 %changelog
+* Mon Aug 04 2014 Emmanuel Vadot <elbarto@bocal.org> - 1.1-1
+- Change Requires to lightdm-gtk-greeter
+
 * Mon Aug 04 2014 Emmanuel Vadot <elbarto@bocal.org> - 1.1-0
 - Update config files
 - Add Requires
