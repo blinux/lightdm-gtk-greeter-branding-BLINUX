@@ -53,8 +53,8 @@ cp bocal_logo.png %{buildroot}/usr/share/pixmaps/;
 
 %files
 %defattr(-,root,root,-)
-%config %{_sysconfdir}/lightdm.conf
-%config %{_sysconfdir}/lightdm-gtk-greeter.conf
+%config %{_sysconfdir}/lightdm/lightdm.conf
+%config %{_sysconfdir}/lightdm/lightdm-gtk-greeter.conf
 /usr/share/pixmaps/bocal_logo.png
 
 %changelog
