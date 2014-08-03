@@ -34,6 +34,7 @@ Vendor:         Bocal
 Url:            http://www.bocal.org
 Group:          User Interface/X
 Packager:       Emmanuel Vadot <elbarto@bocal.org>
+Requires:	lightdm
 
 %description
 LightDM Background and configuration files for BLINUX
@@ -60,6 +61,7 @@ cp bocal_logo.png %{buildroot}/usr/share/pixmaps/;
 %changelog
 * Mon Aug 04 2014 Emmanuel Vadot <elbarto@bocal.org> - 1.1-0
 - Update config files
+- Add Requires
 
 * Sun Aug 03 2014 Emmanuel Vadot <elbarto@bocal.org> - 1.0-0
 - Initial package creation
