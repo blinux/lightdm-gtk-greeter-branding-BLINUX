@@ -23,42 +23,53 @@
 # IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 # POSSIBILITY OF SUCH DAMAGE.
 
-Name:		lightdm-branding-BLINUX
-Version:        1.1
-Release:        1
+%define lightdm_gtk_greeter_version %(rpm -q --queryformat '%%{version}' lightdm-gtk-greeter)
+
+Name:		lightdm-gtk-greeter-branding-BLINUX
+Version:        2.0
+Release:        0
+Summary:        BLINUX branding of lightdm-gtk-greeter
 License:        BSD-2-Clause
-Summary:        BLINUX LightDM Branding
+Group:          System/X11/Displaymanagers
+
+Source0:        lightdm-gtk-greeter.conf
+Source1:        lightdm-gtk-greeter-BLINUX.png
+BuildRequires:  lightdm
+BuildRequires:  lightdm-gtk-greeter
+Requires:       lightdm-gtk-greeter = %{lightdm_gtk_greeter_version}
+Provides:       lightdm-gtk-greeter-branding = %{lightdm_gtk_greeter_version}
+Conflicts:      otherproviders(lightdm-gtk-greeter-branding)
+Supplements:    packageand(lightdm-gtk-greeter:branding-BLINUX)
+BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 BuildArch:      noarch
-Source0:        %{name}-%{version}.tgz
+
 Vendor:         Bocal
-Url:            http://www.bocal.org
-Group:          User Interface/X
 Packager:       Emmanuel Vadot <elbarto@bocal.org>
-Requires:	lightdm-gtk-greeter
+Url:            https://launchpad.net/lightdm-gtk-greeter
 
 %description
 LightDM Background and configuration files for BLINUX
 
 %prep
-%setup
 
 %build
-rm -fr %{buildroot};
-mkdir -p %{buildroot}%{_sysconfdir}/lightdm/;
-mkdir -p %{buildroot}/usr/share/pixmaps/;
 
 %install
-cp lightdm.conf %{buildroot}%{_sysconfdir}/lightdm/;
-cp lightdm-gtk-greeter.conf %{buildroot}%{_sysconfdir}/lightdm/;
-cp bocal_logo.png %{buildroot}/usr/share/pixmaps/;
+install -D -p -m 644 %{SOURCE0} %{buildroot}%{_sysconfdir}/lightdm/lightdm-gtk-greeter.conf
+install -D -p -m 644 %{SOURCE1} %{buildroot}%{_datadir}/pixmaps/lightdm-gtk-greeter-BLINUX.png
+
+%clean
+rm -rf %{buildroot}
 
 %files
-%defattr(-,root,root,-)
-%config %{_sysconfdir}/lightdm/lightdm.conf
-%config %{_sysconfdir}/lightdm/lightdm-gtk-greeter.conf
-/usr/share/pixmaps/bocal_logo.png
+%defattr(-,root,root)
+%config(noreplace) %{_sysconfdir}/lightdm/lightdm-gtk-greeter.conf
+%{_datadir}/pixmaps/lightdm-gtk-greeter-BLINUX.png
 
 %changelog
+* Tue Aug 12 2014 Emmanuel Vadot <elbarto@bocal.org> - 2.0-0
+- Bump to 2.0 for branding
+
 * Mon Aug 04 2014 Emmanuel Vadot <elbarto@bocal.org> - 1.1-1
 - Change Requires to lightdm-gtk-greeter
 
