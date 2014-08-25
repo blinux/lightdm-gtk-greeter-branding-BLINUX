@@ -37,6 +37,7 @@ Source1:        lightdm-gtk-greeter-BLINUX.png
 BuildRequires:  lightdm
 BuildRequires:  lightdm-gtk-greeter
 Requires:       lightdm-gtk-greeter = %{lightdm_gtk_greeter_version}
+Requires:	sysconfig-cli
 Provides:       lightdm-gtk-greeter-branding = %{lightdm_gtk_greeter_version}
 Conflicts:      otherproviders(lightdm-gtk-greeter-branding)
 Supplements:    packageand(lightdm-gtk-greeter:branding-BLINUX)
@@ -60,6 +61,9 @@ install -D -p -m 644 %{SOURCE1} %{buildroot}%{_datadir}/pixmaps/lightdm-gtk-gree
 
 %clean
 rm -rf %{buildroot}
+
+%post
+sysconfig-cli displaymanager DISPLAYMANAGER lightdm
 
 %files
 %defattr(-,root,root)
