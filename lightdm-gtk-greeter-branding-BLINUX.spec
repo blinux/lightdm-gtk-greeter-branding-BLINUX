@@ -27,7 +27,7 @@
 
 Name:		lightdm-gtk-greeter-branding-BLINUX
 Version:        2.0
-Release:        0
+Release:        1
 Summary:        BLINUX branding of lightdm-gtk-greeter
 License:        BSD-2-Clause
 Group:          System/X11/Displaymanagers
@@ -44,7 +44,7 @@ Supplements:    packageand(lightdm-gtk-greeter:branding-BLINUX)
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 BuildArch:      noarch
 
-Vendor:         Bocal
+Vendor:         Blinux
 Packager:       Emmanuel Vadot <elbarto@bocal.org>
 Url:            https://launchpad.net/lightdm-gtk-greeter
 
