@@ -44,7 +44,7 @@ Supplements:    packageand(lightdm-gtk-greeter:branding-BLINUX)
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 BuildArch:      noarch
 
-Vendor:         Bocal
+Vendor:         Blinux
 Packager:       Emmanuel Vadot <elbarto@bocal.org>
 Url:            https://launchpad.net/lightdm-gtk-greeter
 
