@@ -26,7 +26,7 @@
 %define lightdm_gtk_greeter_version %(rpm -q --queryformat '%%{version}' lightdm-gtk-greeter)
 
 Name:		lightdm-gtk-greeter-branding-BLINUX
-Version:        2.0
+Version:        3.0
 Release:        0
 Summary:        BLINUX branding of lightdm-gtk-greeter
 License:        BSD-2-Clause
@@ -71,6 +71,9 @@ sysconfig-cli displaymanager DISPLAYMANAGER lightdm
 %{_datadir}/pixmaps/lightdm-gtk-greeter-BLINUX.png
 
 %changelog
+* Mon Aug 03 2015 Emmanuel Vadot <elbarto@bocal.org> - 3.0-0
+- Update to 3.0
+
 * Tue Aug 12 2014 Emmanuel Vadot <elbarto@bocal.org> - 2.0-0
 - Bump to 2.0 for branding
 
